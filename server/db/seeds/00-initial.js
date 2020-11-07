@@ -24,13 +24,15 @@ exports.seed = async (knex) => {
   };
   const [createdUser] = await knex(tableNames.user).insert(user).returning('*');
 
-  console.log(
-    'User created: ',
-    {
-      password,
-    },
-    createdUser,
-  );
+  if (process.env.NODE_ENV !== 'test') {
+    console.log(
+      'User created: ',
+      {
+        password,
+      },
+      createdUser,
+    );
+  }
 
   // Seed the project table
   const project = {
