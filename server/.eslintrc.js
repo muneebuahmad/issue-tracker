@@ -13,6 +13,6 @@ module.exports = {
   rules: {
     'no-unused-vars': 'warn',
     'prettier/prettier': ['error'],
-    'no-console': { allow: ['warn', 'error'] },
+    'no-console': 1,
   },
 };
